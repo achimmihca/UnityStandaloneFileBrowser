@@ -2,9 +2,17 @@
 
 using System;
 using System.IO;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using Ookii.Dialogs;
+using System.Windows.Forms;
+
+#if UNITY_2023_2
+    // TODO: Workaround for Unity bug that Ookii.Dialogs cannot be loaded in some versions ( https://github.com/gkngkc/UnityStandaloneFileBrowser/issues/135 )
+    using VistaOpenFileDialog = System.Windows.Forms.OpenFileDialog;
+    using VistaFolderBrowserDialog = System.Windows.Forms.FolderBrowserDialog;
+    using VistaSaveFileDialog = System.Windows.Forms.SaveFileDialog;
+#else
+    using Ookii.Dialogs;
+#endif
 
 namespace SFB {
     // For fullscreen support
