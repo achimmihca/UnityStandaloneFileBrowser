@@ -1,3 +1,6 @@
+This repo is archived because the bug that motivated this fork was fixed in newer Unity versions.  
+
+
 # Unity Standalone File Browser
 
 A simple wrapper for native file dialogs on Windows/Mac/Linux.
